@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Mysql_table</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Mysql Table</h1>
+
+    <div class="form" style = "text-align: center; font-size: large;">
+        <form action="/mysqlhtml" method="POST">
+            <input type="text" name="Employee_id" id="Employee_id" placeholder="Employee_id">
+            <input type="text" name="First_name" id="First_name" placeholder="First_name">
+            <input type="text" name="Last_name" id="Last_name" placeholder="Last_name">
+            <input type="text" name="Email_id" id="Email_id" placeholder="Email_id">
+            <input type="text" name="Salary" id="Salary" placeholder="Salary">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+{% endblock %}
