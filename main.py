@@ -162,4 +162,4 @@ def rider():
     return jsonify('https://www.flipkart.com/search?q={}&page={}'.format(search,No))
 
 if __name__ =='__main__':
-    app.run(port=8000)
+    app.run(port=500)
