@@ -161,5 +161,31 @@ def rider():
     No=request.args.get('No_of_pages')
     return jsonify('https://www.flipkart.com/search?q={}&page={}'.format(search,No))
 
+@app.route('/pqr',methods=['GET','POST'])
+def call456():
+        return 'this is my call fdkjflkdjflksdkjflksdfunction'
+
+
+@app.route('/yyyy',methods=['GET','POST'])
+def call2():
+    if request.method =='GET':
+        a= request.json['num1']
+        b= request.json['num2']
+        result = a+b
+        return jsonify( result)
+
+@app.route('/cal1',methods =['GET','POST'])
+def call3():
+    a=request.json['num1']
+    b=request.json['num2']
+    c=request.json['Operation']
+    if c == 'add':
+        res =a +b
+    elif c =='sub':
+        res = a-b
+    elif c == 'Mul':
+        res = a*b
+    return jsonify(res)
+
 if __name__ =='__main__':
     app.run(port=500)
