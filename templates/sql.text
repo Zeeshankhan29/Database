@@ -470,9 +470,124 @@ drop column sales_info;
 
 select count(sales_info) ,sales_info from sales group by sales_info;
 
+select * from sales;
+
+delimiter $$
+create function add_value(a int)
+returns int
+deterministic
+begin
+declare b int;
+set b = a+10 ;
+return b ;
+end $$
+
+select add_value(100);
+
+select add_value(year1)  as new from sales;
 
 
 
+delimiter $$
+create function final_profit(a int , b int)
+returns int
+deterministic
+begin
+declare c int;
+set c = a - b;
+return c;
+end $$
+
+select profit, discount ,final_profit(profit ,discount) as final from sales;
+
+delimiter &&
+create function int_to_str( v int)
+returns varchar(50)
+deterministic
+begin
+declare v2 varchar(50);
+set v2 = v;
+return v2;
+end &&
+
+ select int_to_str(24);
+
+ select * from sales;
+
+select max(sales) , min(sales) from sales;
+
+1-100 super affordable
+100-300 affordable
+300-600 moderate price
+600+ expensive
 
 
+delimiter &&
+create function finder_info(a int)
+returns varchar(50)
+deterministic
+begin
+declare b varchar(50);
+if a >100 then
+set b ='superaffordable';
+elseif a >100 and a<300 then
+set b='affordable';
+elseif a >300 and a<600 then
+set b='Moderate';
+else
+set b ="expensive";
+end if;
+return b;
+end &&
 
+
+select finder_info(sales),sales from sales ;
+
+alter table sales
+add column sales_info varchar(50);
+
+select * from sales
+
+
+update sales
+set sales_info = finder_info(sales)
+
+select count(sales_info),sales_info from sales group by sales_info
+
+
+create table loop_table(a int);
+select * from loop_table;
+
+delimiter $$
+create procedure insert1()
+begin
+set @var =10;
+generate :loop
+insert into loop_table values(@var);
+set @var = @var +2;
+if @var =100 then
+leave generate;
+end if;
+end loop generate;
+end $$
+
+call insert1();
+select * from loop_table;
+
+delimiter $$
+create procedure insert2()
+begin
+set @var =10;
+generate :loop
+if @var%3=0 then
+set @var = @var +1;
+insert into loop_table values(@var);
+if @var =100 then
+leave generate;
+end if;
+end if;
+end loop generate;
+end $$
+
+call insert2();
+select * from loop_table;
