@@ -293,4 +293,186 @@ select * from test8
 
 
 
+use ineuron_fsda;
+csvsql --dialect mysql --snifflimit 100000 sales_data_final.csv > output_sales.sql
+
+
+CREATE TABLE sales (
+	order_id VARCHAR(15) NOT NULL,
+	order_date VARCHAR(50) NOT NULL,
+	ship_date VARCHAR(50) NOT NULL,
+	ship_mode VARCHAR(14) NOT NULL,
+	customer_name VARCHAR(22) NOT NULL,
+	segment VARCHAR(11) NOT NULL,
+	state VARCHAR(36) NOT NULL,
+	country VARCHAR(32) NOT NULL,
+	market VARCHAR(6) NOT NULL,
+	region VARCHAR(14) NOT NULL,
+	product_id VARCHAR(16) NOT NULL,
+	category VARCHAR(15) NOT NULL,
+	sub_category VARCHAR(11) NOT NULL,
+	product_name VARCHAR(127) NOT NULL,
+	sales DECIMAL(38, 0) NOT NULL,
+	quantity DECIMAL(38, 0) NOT NULL,
+	discount DECIMAL(38, 3) NOT NULL,
+	profit DECIMAL(38, 5) NOT NULL,
+	shipping_cost DECIMAL(38, 2) NOT NULL,
+	order_priority VARCHAR(8) NOT NULL,
+	`year` DECIMAL(38, 0) NOT NULL
+);
+
+load data local  infile 'C:/sales_data_final.csv'
+into table sales
+fields terminated by ','
+enclosed by '"'
+lines terminated by '\n'
+ignore 1 rows;
+
+show tables;
+select * from sales;
+set session sql_mode =''
+
+drop table sales;
+
+select str_to_date(order_date,'%m/%d/%Y') from sales;
+select str_to_date(ship_date,'%m/%d/%Y') from sales;
+
+alter table sales
+add column New_order_date date after order_date
+
+alter table sales
+add column New_ship_date date after ship_date
+
+update sales
+set New_order_date = str_to_date(order_date ,'%m/%d/%Y)')
+select * from sales;
+
+update sales
+set New_ship_date = str_to_date(ship_date ,'%m/%d/%Y)')
+
+select * from sales where New_order_date = '2011-04-01' ;
+select * from sales where New_order_date > '2011-04-01' ;
+select * from sales where New_order_date between  '2011-04-01' and '2011-12-01' ;
+
+select now();
+
+select curdate();
+select curtime();
+
+select * from sales where New_order_date < date_sub(now() , interval 1 week);
+
+select date_sub(now() , interval 1 week);
+
+select date_sub(now(), interval 1 month);
+select date_sub(now(), interval 1 day);
+select date_sub(now(), interval 1 year);
+
+select year(now());
+select month(now());
+select day(now());
+
+select date_sub(now(), interval 5 week );
+
+select * from sales where New_ship_date < date_sub(now(), interval 3 month);
+
+select dayname('2024-05-29');
+
+alter table sales
+add column flag date after order_id;
+
+update sales
+set flag = now();
+
+desc sales;
+
+alter table sales
+modify column flag datetime;
+
+select * from sales
+
+alter table sales
+modify column `year` date;
+
+alter table sales
+add column year1 int;
+
+alter table sales
+add column month1 int;
+
+alter table sales
+add column day1 int;
+
+alter table sales
+modify column `year` date
+
+desc sales
+
+update sales
+set `year` = curdate();
+
+select month(curdate());
+select year(curdate());
+select day(curdate());
+
+update sales
+set year1 = year(New_order_date);
+
+
+update sales
+set month1 = month(New_order_date);
+
+
+update sales
+set day1 = day(New_order_date);
+
+select * from sales;
+
+select avg(sales) , year1 from sales group by year1 ;
+select sum(sales) , year1 from sales group by year1 ;
+select sum(quantity), year1 from sales group by year1;
+
+select avg(sales) , state from sales group by state;
+select sum(sales) , state from sales group by state;
+select sum(quantity), state from sales group by state;
+
+select sum(discount+profit) as total_cost, year1 ,state from sales group by state
+
+
+select order_date,discount ,if(discount >0, 'yes', 'no') as discount_flag from sales
+
+select discount,sales ,if(sales>200,'yes' ,'no') as sales_info from sales
+
+
+alter table sales
+add column disount_flag varchar(50)
+
+update sales
+set disount_flag = if(discount >0, 'yes', 'no');
+
+select count(*), disount_flag from sales group by disount_flag
+
+select if(discount >0, 'yes', 'no') from sales
+
+select * from sales;
+select max(sales) from sales;
+select avg(sales) from sales;
+
+select sales , if(sales>300 ,'Profit','Loss') as Sales_info from sales;
+
+alter table sales
+add column sales_info varchar(50);
+
+update sales
+set sales_info = if(sales>300 ,'Profit','Loss') ;
+
+alter table sales
+drop column sales_info;
+
+select count(sales_info) ,sales_info from sales group by sales_info;
+
+
+
+
+
+
 
