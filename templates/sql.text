@@ -814,5 +814,84 @@ select * from ineuron_students  where student_batch='fsde' order by student_mark
 
 select * from ineuron_students  where student_batch='fsds' order by student_marks desc limit 1,1
 
+select * from ineuron_students;
+
+select student_batch, student_name , student_stream , student_marks,
+row_number() over(order by student_marks desc ) as 'row_number' from ineuron_students;
 
 
+select student_batch, student_name , student_stream , student_marks,
+row_number() over(partition by student_batch order by student_marks desc ) as 'row_number' from ineuron_students;
+
+select * from (select student_batch, student_name , student_stream , student_marks,
+row_number() over(partition by student_batch order by student_marks desc ) as 'row_number' from ineuron_students)  as test where `row_number`=1 ;
+
+select student_batch, student_name , student_stream , student_marks,
+row_number() over(partition by student_batch order by student_marks desc ) as 'row_number' from ineuron_students;
+
+insert into ineuron_students values (101,'fsbc','Zeeshan','dataanalyst',65,'zeeshankhan29khan@gmail.com')
+
+
+select student_batch , student_name , student_stream , student_marks,
+row_number() over(partition by student_batch order by student_marks desc) as 'row_number',
+rank() over(partition by student_batch order by student_marks desc) as 'rank',
+dense_rank() over(partition by student_batch order by student_marks desc) as 'dense_rank' from ineuron_students;
+
+
+select * from (select student_batch , student_name , student_stream , student_marks,
+row_number() over(partition by student_batch order by student_marks desc) as 'row_number',
+rank() over(partition by student_batch order by student_marks desc) as 'rank1' from ineuron_students) as test where rank1=1
+
+select * from (select student_batch , student_name , student_stream , student_marks,
+row_number() over(partition by student_batch order by student_marks desc) as 'row_number1' from ineuron_students) as test where row_number1=1
+
+
+select * from (select student_batch , student_name , student_stream , student_marks,
+row_number() over(partition by student_batch order by student_marks desc) as 'row_number',
+rank() over(partition by student_batch order by student_marks desc) as 'rank',
+dense_rank() over(partition by student_batch order by student_marks desc) as 'dense_rank1' from ineuron_students) as test where dense_rank1 in (2,3);
+
+
+select * from ineuron_students;
+
+select student_batch , student_marks, student_name  from ineuron_students
+where student_batch='fsds' order by student_marks desc  limit 1,1;
+
+
+delimiter $$
+create function test500(v1 int)
+returns int
+deterministic
+begin
+declare v2 int;
+set v2=v1+10;
+return v2;
+end$$
+
+select test500(50);
+
+
+select * from (select student_name , student_batch ,
+student_marks ,dense_rank() over(partition by student_batch order by student_marks desc)
+as 'dense' from ineuron_students) as test where dense in (2,3)
+
+
+create table logic(
+emp_id int,
+last_name varchar(50),
+first_name varchar(50),
+salary int,
+primary key(emp_id));
+
+create table second_logic(
+emp_id int,
+email_id varchar(60),
+address varchar(60),
+mobile_no int,
+student_id int,
+foreign key(student_id) references logic(emp_id));
+
+select * from logic;
+
+insert into logic values(251,'khan','Faizan',5000);
+insert into second_logic values(6895,'Asif@gmail.com','mangalore',87564,251);
