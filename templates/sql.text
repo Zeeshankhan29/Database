@@ -1307,4 +1307,51 @@ select lower(student_name) from student;
 
 select date_add(curdate(),interval 10 day)
 
+delimiter &&
+create function func(a int)
+returns varchar(50)
+deterministic
+begin
+declare b varchar(50);
+set b=a;
+return b;
+end &&
+
+select func(50)
+
+delimiter &&
+create function even(a int)
+returns varchar(60)
+deterministic
+begin
+declare b varchar(60);
+if a%2=0 then
+set b = 'even number';
+else
+set b = 'odd number';
+end if;
+return b;
+end &&
+
+select even(course_id) from course ;
+select * from course;
+
+alter table course
+add column day1 varchar(50)
+
+update course
+set day1 = day(date1)
+
+select left(course_name,2) from course;
+select substr(course_name,2,4) from course;
+select instr(course_name,binary'a') from course;
+select concat(left(course_name,2),'***') from course;
+select subdate(sysdate(),interval 2 day)
+
+select s.student_id, s.student_course_id from student s,
+student s1 where s.student_course_id =s1.student_course_id
+and s.student_id != s1.student_id
+
+
+
 
