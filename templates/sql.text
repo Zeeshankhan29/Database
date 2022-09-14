@@ -1352,6 +1352,9 @@ select s.student_id, s.student_course_id from student s,
 student s1 where s.student_course_id =s1.student_course_id
 and s.student_id != s1.student_id
 
+select * from course group by course_name order by course_id desc limit 6,1;
 
+select course_id , course_name , dense_rank() over(
+order by course_id desc) as 'test' from course
 
 
