@@ -432,7 +432,7 @@ select avg(sales) , year1 from sales group by year1 ;
 select sum(sales) , year1 from sales group by year1 ;
 select sum(quantity), year1 from sales group by year1;
 
-select avg(sales) , state from sales group by state;
+select max(sales) , state from sales group by state;
 select sum(sales) , state from sales group by state;
 select sum(quantity), state from sales group by state;
 
@@ -784,6 +784,18 @@ insert into ineuron_students values(100 ,'fsda' , 'saurabh','cs',80,'saurabh@gma
 
 select * from ineuron_students;
 
+select * from (select student_batch , student_name , student_marks , dense_rank() over(partition by student_batch
+order by student_marks desc) as 'rank_wise' from ineuron_students) as test where rank_wise in (1,2,3,4)
+
+
+
+select student_batch, student_name , student_marks , row_number() over(partition by student_batch order
+by student_marks desc) as row_number1 from ineuron_students
+
+select student_batch , student_marks,student_name from ineuron_students where student_marks <
+(select max(student_marks) from ineuron_students where student_batch = 'fsds') limit 1;
+
+
 select count(*), student_batch from ineuron_students group by student_batch;
 
 select count(student_batch) from ineuron_students;
@@ -893,16 +905,18 @@ foreign key(student_id) references logic(emp_id));
 
 select * from logic;
 
-insert into logic values(25,'khan','Faizan',4000);
+insert into logic values(2,'khan','Zeeshan',1000);
 insert into second_logic values(6895,'Asif@gmail.com','mangalore',87564,251);
 
 select * from logic;
 select * from second_logic;
 
-select salary,emp_id,last_name , dense_rank() over(order by salary desc) as 'top_salary' from logic
+select * from logic where salary =(select max(salary) from logic);
+select emp_id,last_name,first_name,salary , row_number() over(order by salary desc) as "row_number" from logic;
+select emp_id,last_name,first_name,salary , rank() over(order by salary desc) as "rank" from logic
+select * from (select emp_id,last_name,first_name,salary , dense_rank() over(order by salary ) as "rank1" from logic) as test where rank1 in (1,2)
 
-select salary,emp_id,last_name , rank() over(order by salary desc) as 'top_salary' from logic
-select salary,emp_id,last_name , row_number() over(order by salary desc) as 'top_salary' from logic
+
 
 select * from ineuron_students;
 
@@ -1216,5 +1230,81 @@ insert ignore into ineuron_courses9 values('machine_learning' , 101 , 'ML', "thi
 ('java' , 1014 , 'ML', "this is ML course" ,'2020-07-07',3540,'sudhanshu',2020) ,
 ('MERN' , 1015 , 'ML', "this is ML course" ,'2019-07-07',3540,'sudhanshu',2019)
 
+create database operation
+use operation
+
+create table if not exists course(
+course_id int,
+course_name varchar(50),
+course_desc varchar(60),
+course_tag varchar(50));
+
+
+create table if not exists student(
+student_id int,
+student_name varchar(60),
+student_mobile int,
+student_course_enroll varchar(60),
+student_course_id int)
+
+insert into course values(101 , 'fsda' , 'full stack data analytics' , 'Analytics'),
+(102 , 'fsds' , 'full stack data analytics' , 'Analytics'),
+(103 , 'fsds' , 'full stack data science' , 'DS'),
+(104 , 'big data' , 'full stack big data' , 'BD'),
+(105 , 'mern' , 'web dev' , 'mern'),
+(106 , 'blockchain' , 'full stack blockchain' , 'BC'),
+(101 , 'java' , 'full stack java' , 'java'),
+(102 , 'testing' , 'full testing ' , 'testing '),
+(105 , 'cybersecurity' , 'full stack cybersecurity' , 'cybersecurity'),
+(109 , 'c' , 'c language' , 'c'),
+(108 , 'c++' , 'C++ language' , 'language');
+
+insert into student values(301 , "sudhanshu", 3543453,'yes', 101),
+(302 , "sudhanshu", 3543453,'yes', 102),
+(301 , "sudhanshu", 3543453,'yes', 105),
+(302 , "sudhanshu", 3543453,'yes', 106),
+(303 , "sudhanshu", 3543453,'yes', 101),
+(304 , "sudhanshu", 3543453,'yes', 103),
+(305 , "sudhanshu", 3543453,'yes', 105),
+(306 , "sudhanshu", 3543453,'yes', 107),
+(306 , "sudhanshu", 3543453,'yes', 103)
+
+select * from course;
+select * from student;
+
+select c.course_id ,c.course_name , c.course_desc,s.student_id,
+s.student_name from course  as c inner join student as s on
+c.course_id = s.student_course_id;
+
+
+select course_id, course_name,course_desc ,student_id
+student_name from course inner join student on
+course_id = student_course_id;
+
+select c.course_id ,c.course_name , c.course_desc,s.student_id,
+s.student_name from course  as c left join student as s on
+c.course_id = s.student_course_id where student_id is null;
+
+
+select c.course_id ,c.course_name , c.course_desc,s.student_id,
+s.student_name from course  as c right join student as s on
+c.course_id = s.student_course_id where course_id is null;
+
+select c.course_id ,c.course_name , c.course_desc,s.student_id,
+s.student_name from course  as c cross join student as s on
+c.course_id = s.student_course_id
+
+select c.course_id ,c.course_name , c.course_desc,s.student_id,
+s.student_name from course  as c cross join student as s
+
+select * from course;
+select * from student;
+
+select left(course_name,2) from course;
+select concat(left(student_name,2),'**') from student;
+select upper(student_name) from student;
+select lower(student_name) from student;
+
+select date_add(curdate(),interval 10 day)
 
 
