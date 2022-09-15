@@ -1769,3 +1769,28 @@ when course_launch_year ='2020' then 'Year is 2020'
 when course_launch_year ='2019' then 'Year is 2019'
 else 'Others'
 end
+
+create database pivote;
+use pivote;
+
+create table order_table1(
+order_id int,
+employe_id int,
+vendor_id int);
+
+insert into order_table1 values(1, 258, 1580),
+(2, 254, 1496),
+(3, 257, 1494),
+(4, 261, 1650);
+
+
+select * from order_table1;
+
+select vendor_id,
+if(employe_id =258,1,Null) as '258',
+if(employe_id =254,1,Null) as '254',
+if(employe_id =257,1,Null) as '257',
+if(employe_id =261,1,Null) as '261'
+from order_table1
+
+
