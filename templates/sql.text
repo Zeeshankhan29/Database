@@ -1358,3 +1358,414 @@ select course_id , course_name , dense_rank() over(
 order by course_id desc) as 'test' from course
 
 
+show index from course
+
+create table if not exists course1(
+course_id int,
+course_name varchar(50),
+course_desc varchar(60),
+course_tag varchar(50),
+index(course_id));
+
+select * from course1
+show index from course1
+
+insert into course1 values(101 , 'fsda' , 'full stack data analytics' , 'Analytics'),
+(102 , 'fsds' , 'full stack data analytics' , 'Analytics'),
+(103 , 'fsds' , 'full stack data science' , 'DS'),
+(104 , 'big data' , 'full stack big data' , 'BD'),
+(105 , 'mern' , 'web dev' , 'mern'),
+(106 , 'blockchain' , 'full stack blockchain' , 'BC'),
+(101 , 'java' , 'full stack java' , 'java'),
+(102 , 'testing' , 'full testing ' , 'testing '),
+(105 , 'cybersecurity' , 'full stack cybersecurity' , 'cybersecurity'),
+(109 , 'c' , 'c language' , 'c'),
+(108 , 'c++' , 'C++ language' , 'language');
+
+create table if not exists course2(
+course_id int,
+course_name varchar(50),
+course_desc varchar(60),
+course_tag varchar(50),
+index(course_id,course_name));
+
+show index from course1;
+
+
+create table if not exists course3(
+course_id int,
+course_name varchar(50),
+course_desc varchar(60),
+course_tag varchar(50),
+index(course_id,course_name,course_desc));
+
+
+show index from course2;
+
+insert into course2 values(101 , 'fsda' , 'full stack data analytics' , 'Analytics'),
+(102 , 'fsds' , 'full stack data analytics' , 'Analytics'),
+(103 , 'fsds' , 'full stack data science' , 'DS'),
+(104 , 'big data' , 'full stack big data' , 'BD'),
+(105 , 'mern' , 'web dev' , 'mern'),
+(106 , 'blockchain' , 'full stack blockchain' , 'BC'),
+(101 , 'java' , 'full stack java' , 'java'),
+(102 , 'testing' , 'full testing ' , 'testing '),
+(105 , 'cybersecurity' , 'full stack cybersecurity' , 'cybersecurity'),
+(109 , 'c' , 'c language' , 'c'),
+(108 , 'c++' , 'C++ language' , 'language');
+
+select * from course2 where course_id=106
+
+
+select course_desc ,course_name  from course
+union
+select student_id,student_name from student
+
+select course_id ,course_name  from course
+union
+select student_id,student_name from student
+
+select course_id ,course_name ,course_desc from course
+union
+select student_id,student_name from student
+
+select course_id ,course_name  from course
+union all
+select student_id,student_name from student
+
+with sample_students as (
+select * from course where course_id  in (101,102,106))
+select * from sample_students where course_name ='testing';
+
+with new_table as(
+select c.course_id ,c.course_name , c.course_desc,s.student_id,
+s.student_name from course  as c right join student as s on
+c.course_id = s.student_course_id ) select * from new_table where
+course_id in (101,102);
+
+with new1 as
+(select 1 as col1 , 2 as col2
+union all
+select 3,4) select * from new1 where col1=1
+
+with recursive cte(n) as
+(select 1 union all select n+1 from cte where n<5)
+select * from cte
+
+
+use ineuron
+
+create table course(
+course_id int,
+course_desc varchar(60),
+course_mentor varchar(60),
+course_price int,
+course_discount int);
+
+create table course_update(
+course_mentor_update varchar(60),
+course_price_update int,
+course_discount_update int);
+
+select * from course;
+select * from course_update;
+
+create table course1(
+course_id int,
+course_desc varchar(60),
+course_mentor varchar(60),
+course_price int,
+course_discount int,
+create_date date);
+
+select * from course1
+desc course1
+
+delimiter $$
+create trigger course1_befor_insert
+before insert on course1 for each row
+begin
+set new.create_date = sysdate();
+end; $$
+
+
+insert into course1 (course_id,course_desc,course_mentor,course_price,course_discount) values(102,'FSDS','Zeeshan',4000,500);
+
+create table course2(
+course_id int,
+course_desc varchar(60),
+course_mentor varchar(60),
+course_price int,
+course_discount int,
+create_date date,
+user_info varchar(60));
+
+delimiter $$
+create trigger course2_before_insert
+before insert on course2 for each row
+begin
+declare user_val varchar(60);
+set new.create_date = sysdate();
+select user() into user_val;
+set new.user_info = user_val;
+end $$
+
+select * from course2
+select user();
+
+insert into course2 (course_id,course_desc,course_mentor,course_price,course_discount) values(105,'FSDA','Khan',5000,5000);
+
+
+create table ref_course(
+record_insert_date date,
+record_insert_user varchar(50));
+
+select * from ref_course;
+
+delimiter $$
+create trigger course21_before_insert
+before insert on course2 for each row
+begin
+declare user_val varchar(60);
+set new.create_date = sysdate();
+select user() into user_val;
+set new.user_info = user_val;
+insert into ref_course values(sysdate(),user_val);
+end $$
+
+create table test1(
+c1 varchar(60),
+c2 date,
+c3 int);
+
+create table test2(
+c1 varchar(60),
+c2 date,
+c3 int)
+
+create table test3(
+c1 varchar(60),
+c2 date,
+c3 int)
+
+select * from test1;
+select * from test2;
+select * from test3;
+
+delimiter $$
+create trigger insert_test2
+before insert on test1 for
+each row
+begin
+insert into test2 values('first_insertion',sysdate(),202);
+insert into test3 values('first_insertion',sysdate(),4000);
+end $$
+
+insert into test4 values('arushi', '2200-04-20',400);
+select * from test4
+
+create table test4(
+c1 varchar(60),
+c2 date,
+c3 int);
+
+delimiter $$
+create trigger insert_test4
+before insert on test4 for
+each row
+begin
+update test2
+set c1 = 'krish' where c1='krishna';
+delete from test3
+where c1='first_insertion';
+end $$
+
+
+
+delimiter $$
+create trigger to_delete_others
+after delete on test4 for
+each row
+begin
+insert into test2 values('sudhanshu',sysdate(),40000);
+insert into test3 values('Zeeshan',sysdate(),50000);
+end $$
+
+select * from test4
+select * from test2
+select * from test3
+
+insert into test4 values('help', sysdate(),90)
+
+delete from test4 where c1='arushi'
+
+
+delimiter $$
+create trigger on_same_table1
+before delete on test2 for
+each row
+begin
+insert into test2(c1,c2,c3) values(old.c1,old.c2,old.c3);
+end $$
+
+
+select * from test2
+
+delete from test2 where c1='krish';
+
+
+create table test11(
+c1 varchar(60),
+c2 date,
+c3 int);
+
+create table test12(
+c1 varchar(60),
+c2 date,
+c3 int)
+
+create table test13(
+c1 varchar(60),
+c2 date,
+c3 int)
+
+delimiter $$
+create trigger on_same_table11
+before delete on test11 for
+each row
+begin
+insert into test12(c1,c2,c3) values(old.c1,old.c2,old.c3);
+end $$
+
+insert into test11 values('sudhanshu',sysdate(),40000);
+select * from test11
+select * from test12
+select * from test13
+
+delimiter $$
+create trigger on_same_table11_again
+after delete on test11 for
+each row
+begin
+insert into test12(c1,c2,c3) values(old.c1,old.c2,old.c3);
+end $$
+
+insert into test11 values('Zeeshan',sysdate(),8000);
+
+delete from test11 where c1='Zeeshan';
+
+
+delimiter $$
+create trigger before_update_test14
+before update on test14 for
+each row
+begin
+insert into test15(c1,c2,c3) values(old.c1,old.c2,old.c3);
+end $$
+
+
+
+delimiter $$
+create trigger before_update11_test14
+after update on test14 for
+each row
+begin
+insert into test16(c1,c2,c3) values(old.c1,old.c2,old.c3);
+end $$
+
+create table test14(
+c1 varchar(60),
+c2 date,
+c3 int);
+
+create table test15(
+c1 varchar(60),
+c2 date,
+c3 int)
+
+create table test16(
+c1 varchar(60),
+c2 date,
+c3 int)
+
+insert into test14 values('krish',sysdate(),80000);
+
+select * from test14;
+select * from test15;
+select * from test16;
+
+update test14
+set c1='Zeeshan' where c1='krish'
+
+
+delimiter $$
+create trigger before_update11_test15
+after update on test15 for
+each row
+begin
+insert into test16(c1,c2,c3) values(new.c1,new.c2,new.c3);
+end $$
+
+update test15
+set c1='xyz' where c1='Zeeshan'
+
+use ineuron_partition
+select * from ineuron_partition.ineuron_courses;
+
+select * ,
+case
+when  course_launch_year =2022 then 'this is year 2022'
+else 'this is not my year'
+end as year_info
+from ineuron_courses;
+
+select * ,
+case
+when  length(course_name)=2 then 'length is 2'
+when length(course_name)= 4 then 'length is 4'
+else 'neither 2 or 4'
+end as ratings
+from ineuron_courses;
+
+
+select * ,
+case
+when  length(course_name)=2 then sysdate()
+when length(course_name)= 4 then sysdate()
+else 'neither 2 or 4'
+end as ratings
+from ineuron_courses;
+
+select * ,
+case
+when course_mentor ='sudhanshu' then 'my teacher'
+else 'waste of time'
+end as teacher_info
+from ineuron_courses;
+
+select * ,
+case
+when course_name ='fsds' then 'My course'
+else 'Not my course'
+end as course_info
+from ineuron_courses;
+
+
+update ineuron_courses
+set course_name =  case
+when course_name ='RL' then 'Reinforcement learning'
+when course_name  ='DL' then 'Deep learning'
+else 'no information'
+end
+
+select * from ineuron_partition.ineuron_courses;
+
+alter table ineuron_courses
+add column fees_info varchar(60);
+
+update ineuron_courses
+set fees_info = case
+when course_launch_year ='2020' then 'Year is 2020'
+when course_launch_year ='2019' then 'Year is 2019'
+else 'Others'
+end
