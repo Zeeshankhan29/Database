@@ -1793,4 +1793,45 @@ if(employe_id =257,1,Null) as '257',
 if(employe_id =261,1,Null) as '261'
 from order_table1
 
+create database test;
+use test;
+show tables;
+create table  course(
+course_id int,
+course_name varchar(50),
+course_mentor varchar(50),
+course_title varchar(50),
+primary key(course_id));
 
+drop table course1;
+create table course1(
+course_id int,
+student_name varchar(60),
+student_email varchar(60),
+student_id int,
+payment int,
+foreign key (course_id) references course(course_id));
+
+select * from course;
+select * from course1;
+
+
+
+select * from (select student_name, payment, dense_rank() over(order by payment desc) as 'rank1' from course1) as test where rank1=3;
+select student_name,payment, row_number() over(order by payment desc)  as "row" from course1;
+select student_name,payment, rank() over(order by payment desc)  as "row" from course1;
+
+
+
+insert into course values(503, 'ML','Krish','Machinelearning');
+
+insert into course1 values(503, 'Nandini','nadini@gmail.com',1215,1500);
+
+with datas as
+(select c.course_name, c1.course_id, c1.student_name,c1.student_id,c1.payment from course c right join course1 c1
+on c.course_id = c1.course_id) select * from datas order by course_name
+
+select * from  (with datas as
+(select c.course_name, c1.course_id, c1.student_name,c1.student_id,c1.payment from course c right join course1 c1
+on c.course_id = c1.course_id) select student_name,course_name, payment,dense_rank() over(partition by course_name order by payment desc) as 'rank1'
+from datas) as test1 where rank1 in (2)
