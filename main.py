@@ -64,6 +64,8 @@ def mysql3():
     result =cursor.fetchall()
     return jsonify(result)
 
+
+
 @app.route('/mysqlpostman',methods=['GET','POST'])
 def mysql2():
     if request.method == 'POST':
@@ -135,14 +137,13 @@ def mong():
     return jsonify('executed completely')
 
 
-
 @app.route('/browser',methods=['GET','POST'])
 def browser():
     db=request.args.get('database_name')
     table = request.args.get('table_name')
-    mydb = conn.connect(host='localhost', user='root', passwd='snzk@#1329',database=db)
-    cursor = mydb.cursor(dictionary=True)
-    #cursor.execute('use {}'.format(db))
+    mydb = conn.connect(host='localhost', user='root', passwd='snzk@#1329')
+    cursor = mydb.cursor()
+    cursor.execute('use {}'.format(db))
     cursor.execute('select * from {}'.format(table))
     res = cursor.fetchall()
     return jsonify(res)
