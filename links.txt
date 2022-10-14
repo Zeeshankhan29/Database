@@ -1,3 +1,9 @@
 https://drive.google.com/drive/folders/10kkNPuhayp9_fHqRZtQT912ZHDdlxAMQ
 https://drive.google.com/file/d/1q_NG4XG9fVm-T11ALCJa-Hoz6MTcvAS_/view
 https://drive.google.com/file/d/1p9Ou1xu1lABhBNEBmMhlXEblA4ZL6afz/view
+
+
+pip uninstall zmq
+pip install zmq
+pip install markupsafe==2.0.1
+jupyter notebook
