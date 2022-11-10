@@ -8,3 +8,6 @@ pip uninstall zmq
 pip install zmq
 pip install markupsafe==2.0.1
 jupyter notebook
+
+C:\Users\91986\anaconda3\Lib\site-packages\zmq
+C:\Users\91986\anaconda3\Library\bin
