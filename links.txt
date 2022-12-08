@@ -4,6 +4,8 @@ https://drive.google.com/file/d/1p9Ou1xu1lABhBNEBmMhlXEblA4ZL6afz/view
 https://drive.google.com/drive/folders/1sS8NEef2rUtWIUY-JyDDD7XEjBTw86Zl
 https://www.youtube.com/watch?v=8Q_QQVQ1HZA
 
+https://github.com/tensorflow/models/tree/v1.13.0
+
 
 pip uninstall zmq
 pip install zmq
