@@ -5,6 +5,7 @@ https://drive.google.com/drive/folders/1sS8NEef2rUtWIUY-JyDDD7XEjBTw86Zl
 https://www.youtube.com/watch?v=8Q_QQVQ1HZA
 
 https://github.com/tensorflow/models/tree/v1.13.0
+http://download.tensorflow.org/models/object_detection/faster_rcnn_inception_v2_coco_2018_01_28.tar.gz
 
 
 pip uninstall zmq
