@@ -19,3 +19,4 @@ C:\Users\91986\anaconda3\Library\bin
 
 
 https://quillbot.com/
+https://www.baeldung.com/cs/attention-mechanism-transformers
