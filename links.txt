@@ -23,3 +23,4 @@ https://www.baeldung.com/cs/attention-mechanism-transformers
 
 https://github.com/ageitgey/face_recognition
 https://exadel.com/solutions/compreface/
+https://www.faceplusplus.com/
