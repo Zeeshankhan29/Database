@@ -1,6 +1,7 @@
 git branch -a
 git branch -v
 git branch -vv
+git branch -r
 
 git branch <branch name>
 git branch zeeshan
