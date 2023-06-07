@@ -1,0 +1,29 @@
+git branch -a
+git branch -v
+git branch -vv
+
+git branch <branch name>
+git branch zeeshan
+
+git branch --set-upstream-to=<remote server name>/<local branch name>
+git branch --set-upstream-to=origin/zeeshan
+
+git remote -v
+
+git checkout -b <local branch name> <remote server name>/<remote branch name>
+git checkout -b zeeshan origin/zeeshan
+
+git checkout <branch name>
+git checkout zeeshan
+
+git clone <url>
+git clone https://github.com/Zeeshankhan29/Database.git
+
+git clone -b <remote branch name> <remote url or git url like http or ssh>
+git clone -b zeeshan https://github.com/Zeeshankhan29/Database.git
+
+git rm --cached <filename>
+git rm --cached main.py
+
+git remote rename <old origin name> <new origin name>
+git remote rename origin origin1
