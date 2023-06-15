@@ -17,6 +17,13 @@ git checkout -b zeeshan origin/zeeshan
 git checkout <branch name>
 git checkout zeeshan
 
+
+## Tools for ease
+gitlens
+gitgraph
+tabnine
+autodocstring
+
 git clone <url>
 git clone https://github.com/Zeeshankhan29/Database.git
 
