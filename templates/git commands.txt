@@ -35,3 +35,7 @@ git rm --cached main.py
 
 git remote rename <old origin name> <new origin name>
 git remote rename origin origin1
+
+
+git fetch --all
+git reset --hard origin/{{your branch name}}
