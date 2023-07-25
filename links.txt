@@ -25,3 +25,5 @@ https://github.com/ageitgey/face_recognition
 https://exadel.com/solutions/compreface/
 https://www.faceplusplus.com/
 https://kairos.com/
+
+https://huggingface.co/blog/accelerate-large-models
