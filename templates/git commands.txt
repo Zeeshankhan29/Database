@@ -39,3 +39,10 @@ git remote rename origin origin1
 
 git fetch --all
 git reset --hard origin/{{your branch name}}
+
+#To delete local and remote branch 
+git branch -d {local_branch_name}
+git push {origin_name} --delete {remote_branch_name}
+
+
+git show {hash_code}
