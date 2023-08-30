@@ -46,3 +46,6 @@ git push {origin_name} --delete {remote_branch_name}
 
 
 git show {hash_code}
+
+git clone -b <branch name> --single-branch <url_link>
+gitk
