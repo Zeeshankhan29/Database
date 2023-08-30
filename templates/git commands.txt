@@ -47,5 +47,11 @@ git push {origin_name} --delete {remote_branch_name}
 
 git show {hash_code}
 
+#One branch clone commands
 git clone -b <branch name> --single-branch <url_link>
 gitk
+
+
+#two branch clone commands( here development and feature are the two remote branches)
+git clone --branch development --branch feature --single-branch https://github.com/username/repo.git
+
