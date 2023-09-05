@@ -55,3 +55,12 @@ gitk
 #two branch clone commands( here development and feature are the two remote branches)
 git clone --branch development --branch feature --single-branch https://github.com/username/repo.git
 
+
+git show <commit id>
+git diff <filename>
+git commit --amend
+git restore <filename> # to remove from the staging stage
+git restore --staged <filename>
+git reset --hard HEAD^ # To remove the latest commit 
+git reset --soft <required commit id> # will moved to required commit and remove all the commit after required commit but keep the files in the staging stage
+
