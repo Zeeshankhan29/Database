@@ -68,3 +68,6 @@ git stash apply  #To reget the local changes saved
 
 git ls-remote --heads <origin name>
 git ls-remote <origin name>
+
+
+git pull --allow-unrelated-histories
