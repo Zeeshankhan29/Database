@@ -71,3 +71,7 @@ git ls-remote <origin name>
 
 
 git pull --allow-unrelated-histories
+
+git config --global http.postBuffer 524288000  # 500 MB
+git config --global http.lowSpeedLimit 0
+git config --global http.lowSpeedTime 999999
