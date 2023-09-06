@@ -63,4 +63,8 @@ git restore <filename> # to remove from the staging stage
 git restore --staged <filename>
 git reset --hard HEAD^ # To remove the latest commit 
 git reset --soft <required commit id> # will moved to required commit and remove all the commit after required commit but keep the files in the staging stage
+git stash # To save changes locally without commit
+git stash apply  #To reget the local changes saved 
 
+git ls-remote --heads <origin name>
+git ls-remote <origin name>
