@@ -65,12 +65,18 @@ git reset --hard HEAD^ # To remove the latest commit
 git reset --soft <required commit id> # will moved to required commit and remove all the commit after required commit but keep the files in the staging stage
 git stash # To save changes locally without commit
 git stash apply  #To reget the local changes saved 
+git stash -m "apply stash"
+git stash list
+git stash drop 0 
+
 
 git ls-remote --heads <origin name>
 git ls-remote <origin name>
 
 
 git pull --allow-unrelated-histories
+git fetch origin
+git merge origin/master --allow-unrelated-histories
 
 git config --global http.postBuffer 524288000  # 500 MB
 git config --global http.lowSpeedLimit 0
