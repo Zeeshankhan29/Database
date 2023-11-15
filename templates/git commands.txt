@@ -77,6 +77,7 @@ git ls-remote <origin name>
 git pull --allow-unrelated-histories
 git fetch origin
 git merge origin/master --allow-unrelated-histories
+git merge --squash feature
 
 git config --global http.postBuffer 524288000  # 500 MB
 git config --global http.lowSpeedLimit 0
