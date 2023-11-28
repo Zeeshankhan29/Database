@@ -188,3 +188,95 @@ def predict_image():
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=500)
 
+
+
+#please see below
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+  __|
+\|/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#flask server
+from flask import Flask, jsonify
+import os
+import cv2
+import threading
+import time
+
+app = Flask(__name__)
+
+def capture(camera, lock, index):
+    ret, frame = camera.read()
+
+    if not ret:
+        print(f'Error in camera {index} while capturing')
+
+    if frame is None or frame.size == 0:
+        print(f'Image not valid captured from camera {index}')
+
+    os.makedirs('data', exist_ok=True)
+    filename = f'captured_{index}_{time.time()}.jpg'
+    cv2.imwrite(filename, frame)
+
+    with lock:
+        results.append(f'{filename} captured ')
+    print(results)
+
+@app.route('/capture_images', methods=['POST'])
+def capture_images():
+    threads = []
+    results = []
+    for index, camera_obj_value in enumerate(camera_obj):
+        thread = threading.Thread(target=capture, args=(camera_obj_value, lock, index))
+        threads.append(thread)
+        thread.start()
+
+    for thread in threads:
+        thread.join()
+
+    return jsonify({'message': 'All results captured'})
+
+if __name__ == '__main__':
+    camera_index = [0, 1]
+    camera_obj = [cv2.VideoCapture(idx) for idx in camera_index]
+
+    lock = threading.Lock()
+
+    app.run(debug=True)
+
