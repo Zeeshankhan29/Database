@@ -275,7 +275,7 @@ def capture_images():
 if __name__ == '__main__':
     camera_index = [0, 1]
     camera_obj = [cv2.VideoCapture(idx) for idx in camera_index]
-
+    results = []
     lock = threading.Lock()
 
     app.run(debug=True)
