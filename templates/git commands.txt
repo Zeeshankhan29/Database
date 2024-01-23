@@ -82,3 +82,12 @@ git merge --squash feature
 git config --global http.postBuffer 524288000  # 500 MB
 git config --global http.lowSpeedLimit 0
 git config --global http.lowSpeedTime 999999
+
+winpty python <filename> & # To run background flask service without getting reflected in terminal (only in gitbash)
+nohup python <filename> & # To run background service for flask
+
+ps aux | grep main1.py # To check which service are running specially id
+ps aux
+pkill -f <filename>
+kill -9 <PID> # To terminate the background service
+
