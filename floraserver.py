@@ -276,7 +276,8 @@ def predict_image():
                 #Load Classification configuration 
                 # image = pass_img()
                 image = capture_image()
-                zoom_percentage = config['model_variant']['zoom_factor']
+                zoom_config = config['model_variant']['zoom_factor']
+		zoom_percentage = 100 - zoom_config
                 height, width = image.shape[:2]
                 center_x, center_y = width // 2, height // 2
                 zoom_width = int(width * (zoom_percentage / 100))
