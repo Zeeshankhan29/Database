@@ -17,6 +17,8 @@ import yaml
 from PIL import Image
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'application/json'
 
 # log directory
 log_path = 'predict.log'
