@@ -914,3 +914,9 @@
   914  clear
   915  ls
   916  history > linux-hadoop-commands.txt
+  917  lsblk
+  918  cut -b 1 <filename.txt>
+  919  ln -s <full file path> softlink
+  920  ln  <full file path> hardlink
+  921  man <command name>
+  922  
