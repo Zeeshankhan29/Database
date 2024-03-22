@@ -919,4 +919,7 @@
   919  ln -s <full file path> softlink
   920  ln  <full file path> hardlink
   921  man <command name>
-  922  
+  922  sudo useradd username
+  923  sudo username passwd
+  924  sudo userdel username
+  
