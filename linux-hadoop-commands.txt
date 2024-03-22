@@ -1,0 +1,916 @@
+    1  ifconfig
+    2  clear
+    3  ifconfig
+    4  ls
+    5  ls -l -a
+    6  clear
+    7  ls
+    8  cd Downloads/
+    9  ls
+   10  cd ..
+   11  cd Desktop/
+   12  ls
+   13  cd ..
+   14  cd Documents/
+   15  ls
+   16  clear
+   17  ifconfig
+   18  ls
+   19  clear
+   20  ls
+   21  clear
+   22  ls
+   23  clear
+   24  ls
+   25  cd data
+   26  ls
+   27  ls -l -a
+   28  clear
+   29  ls
+   30  clear
+   31  ls
+   32  rm -r -f *.png
+   33  ls
+   34  clear
+   35  ls
+   36  clear
+   37  ls
+   38  cd ..
+   39  ls
+   40  cd home/
+   41  ls
+   42  cd cloudera/
+   43  ls
+   44  clear
+   45  ls
+   46  cd data
+   47  ls
+   48  clear
+   49  ls
+   50  hadoop fs -ls
+   51  hadoop fs -ls /
+   52  clear
+   53  ls
+   54  clear
+   55  hive
+   56  clear
+   57  ls
+   58  ls -l
+   59  clear
+   60  ls
+   61  ls -l 
+   62  ls
+   63  clear
+   64  ls
+   65  ls -l 
+   66  hadoop fs -ls /
+   67  ls
+   68  ls -l
+   69  clear
+   70  ls 
+   71  hadoop fs -ls /
+   72  hdfs dfs -ls
+   73  hdfs dfs -ls /
+   74  clear
+   75  ls
+   76  ls -l 
+   77  hadoop fs -ls /
+   78  hdfs dfs -ls /
+   79  ls
+   80  clear
+   81  hadoop fs -ls /
+   82  hdfs dfs -ls /
+   83  vi test.txt
+   84  cat test.txt
+   85  ls
+   86  clear
+   87  ls
+   88  ls -l -a
+   89  clear
+   90  ls
+   91  clear
+   92  ls
+   93  cat test.txt
+   94  clear
+   95  hadoop fs -ls /
+   96  hdfs dfs -ls /
+   97  clear
+   98  hadoop fs -ls /
+   99  hdfs dfs -ls /
+  100  clear
+  101  ls -l
+  102  hadoop fs -ls /
+  103  clear
+  104  ls
+  105  hadoop fs -copyFromLocal test.txt /
+  106  hadoop fs -ls /
+  107  jpg
+  108  jps
+  109  ls
+  110  jps
+  111  ls
+  112  cler
+  113  hadoop fs -ls /
+  114  clear
+  115  ls
+  116  cd data
+  117  ls
+  118  clear
+  119  ls
+  120  clear
+  121  ls
+  122  cd ..
+  123  ls
+  124  rm -r data1
+  125  ls
+  126  clear
+  127  ls
+  128  hadoop fs -ls /
+  129  hdfs dfs -ls /l
+  130  hdfs dfs -ls /
+  131  clear
+  132  hdfs dfs -ls 
+  133  hdfs dfs -ls /
+  134  hadoop fs -ls
+  135  hadoop fs -ls /
+  136  hadoop fs -ls /home
+  137  pwd
+  138  hadoop fs -ls /
+  139  hadoop fs -ls /temp
+  140  hadoop fs -ls /tmp
+  141  hadoop fs -ls /
+  142  clear
+  143  ls
+  144  ls -l -a
+  145  clear
+  146  hadoop fs -copyFromLocal test.txt /
+  147  ls
+  148  rm -r -f test.txt
+  149  clear
+  150  ls
+  151  hadoop fs -ls /
+  152  hadoop fs -copyToLocal test.txt /
+  153  hadoop fs -copyToLocal /test.txt /
+  154  hadoop fs -copyToLocal /test.txt /home
+  155  hadoop fs -chmod 777 /test.txt
+  156  hadoop fs -copyToLocal /test.txt /
+  157  ls
+  158  hadoop fs -chmod 777 /test.txt
+  159  hadoop fs -ls /
+  160  hadoop fs -copyToLocal /test.txt /
+  161  hadoop fs -copyToLocal /test.txt /home/cloudera
+  162  ls
+  163  cat test.txt
+  164  clear
+  165  ls
+  166  hadoop fs -ls /
+  167  pwd
+  168  clear
+  169  ls
+  170  ginit test.txt
+  171  genit test.txt
+  172  clear
+  173  ls
+  174  hdfs dfs -cat /test.txt
+  175  hadoop fs -cat /test.txt
+  176  hadoop version
+  177  cler
+  178  clear
+  179  ls
+  180  clear
+  181  history
+  182  clear
+  183  hadoop df -mkdir /test
+  184  hadoop fs -mkdir /test
+  185  hadoop fs -ls /
+  186  vi test2.txt
+  187  cat test2.txt
+  188  ls
+  189  hdfs dfs -put test2.txt /test
+  190  hdfs dfs -ls /
+  191  hdfs dfs -ls /test
+  192  hdfs dfs -cat /test/test2.txt
+  193  clear
+  194  ls
+  195  rm -r test2.txt
+  196  rm -r -f test.txt
+  197  clear
+  198  ls
+  199  hdfs dfs -get test2.txt /test/test2.txt
+  200  hdfs dfs -get  /test/test2.txt
+  201  ls
+  202  cat test2.txt
+  203  hadoop fs -ls /
+  204  hadoop fs -chmod 777 test/test2.txt
+  205  hadoop fs -chmod 777 /test/test2.txt
+  206  clear
+  207  ls
+  208  rm -f -r test2.txt
+  209  clear
+  210  ls
+  211  cd data
+  212  ls
+  213  clear
+  214  cd ..
+  215  clear
+  216  hadoop fs -ls /
+  217  hadoop fs -cat /test.txt
+  218  hadoop fs -cat /test/test2.txt
+  219  hadoop fs -ls /test/
+  220  clear
+  221  ls
+  222  hadoop fs -get /test/test2.txt /data/
+  223  hadoop fs -get /test/test2.txt data/
+  224  cd data
+  225  ls
+  226  cat test2.txt
+  227  clear
+  228  ls
+  229  clear
+  230  cd ..
+  231  clear
+  232  ls
+  233  hdfs fs -ls /
+  234  hadoop fs -ls /
+  235  hadoop dfs -cat /test.txt
+  236  hadoop fs -cat test.txt
+  237  hadoop fs -cat /test.txt
+  238  clear
+  239  cd data
+  240  ls
+  241  rm -r -f test.txt test2.txt
+  242  clear
+  243  ls
+  244  cd ..
+  245  ls
+  246  clear
+  247  ls
+  248  hdfs dfs -ls /
+  249  hdfs dfs -get /test.txt data/
+  250  hdfs dfs -get test/test2.txt data/
+  251  hdfs dfs -get /test/test2.txt data/
+  252  cd ..
+  253  cd cloudera/
+  254  ls
+  255  cd data
+  256  ls
+  257  ls -l -a
+  258  chmod -777 test2.txt test.txt
+  259  chmod 777 test2.txt test.txt
+  260  ls -l -a
+  261  chmod 755 test2.txt test.txt
+  262  ls
+  263  ls -l -a
+  264  clear
+  265  ls
+  266  clear
+  267  ls
+  268  clear
+  269  cd ..
+  270  clear
+  271  hdfs dfs -ls /
+  272  hdfs dfs -mv test.txt /test/
+  273  hdfs dfs -mv /test.txt /test/
+  274  hdfs dfs -ls /
+  275  hdfs dfs -ls /test
+  276  hdfs dfs -cp /test/test2.txt /
+  277  ls
+  278  hadoop fs -ls /
+  279  hdfs fs -rm /test/test2.txt
+  280  hdfs fs -rm -r -f /test/test2.txt
+  281  hdfs dfs -rm -r -f /test/test2.txt
+  282  clear
+  283  hdfs dfs ls -l
+  284  hdfs dfs -ls /
+  285  hdfs dfs -ls /test
+  286  hdfs dfs -mv /test/test2.txt
+  287  hdfs dfs -mv /test/test2.txt /test/
+  288  hdfs dfs -mv test2.txt /test/
+  289  hdfs dfs -mv /test2.txt /test/
+  290  clear
+  291  hdfs dfs -ls /test
+  292  hdfs dfs -chmod 777 /test
+  293  hdfs dfs -ls /test
+  294  hdfs dfs -chmod 777 /test/test2.txt
+  295  hdfs dfs -ls /test
+  296  clear
+  297  ls
+  298  clear
+  299  ls
+  300  clear
+  301  hadoop fs -ls /test
+  302  clear
+  303  du
+  304  dues
+  305  dus
+  306  du -s
+  307  count 
+  308  pwd
+  309  /home/cloudera/ -count
+  310  dus
+  311  du
+  312  clear
+  313  hadoop fs -count
+  314  hadoop fs -count/
+  315  hadoop fs -count /
+  316  hdfs dfs -count /
+  317  hdfs dfs -du /
+  318  hdfs dfs -df /
+  319  df
+  320  usage
+  321  hadoop fs -usage copy
+  322  hadoop fs -usage get
+  323  clear
+  324  ls
+  325  ls -l -a
+  326  hdfs fsck .
+  327  hdfs fsck /
+  328  clear
+  329  ls
+  330  clear
+  331  ls
+  332  hadoop fs -ls /
+  333  exit
+  334  clear
+  335  ls
+  336  clear
+  337  ls
+  338  clear
+  339  ls
+  340  cd Documents/
+  341  ls
+  342  cd ..
+  343  mkdir data
+  344  ls
+  345  cd data
+  346  ls
+  347  clear
+  348  ls
+  349  clear
+  350  ls
+  351  cat test.txt
+  352  clear
+  353  ls
+  354  clear
+  355  ls
+  356  clear
+  357  ls
+  358  clear
+  359  ls
+  360  ls -l -a
+  361  clear
+  362  ls
+  363  echo "data" | tee test6.txt
+  364  ls
+  365  cat test6.txt
+  366  clear
+  367  ls
+  368  history
+  369  clear
+  370  ls
+  371  clear
+  372  which bash
+  373  clear
+  374  ls
+  375  tail test2.txt
+  376  head test2.txt
+  377  clear
+  378  ls
+  379  clear
+  380  ls -l -a
+  381  clear
+  382  ls
+  383  clear
+  384  ls
+  385  cd
+  386  ls
+  387  pwd
+  388  clear
+  389  ls
+  390  cd data
+  391  ls
+  392  mv test.txt ../Downloads/
+  393  ls
+  394  cd ..
+  395  cd Downloads/
+  396  ls
+  397  cd 
+  398  pwd
+  399  ls
+  400  cp Downloads/test.txt data/
+  401  ls
+  402  cd data
+  403  ls
+  404  clear
+  405  ls
+  406  cd ..
+  407  clear
+  408  ls
+  409  mv -r data/ stored_data
+  410  mv -r data/ stored_data/
+  411  mv  data/ stored_data/
+  412  ls
+  413  clear
+  414  ls
+  415  cd stored_data/
+  416  ls
+  417  clear
+  418  ls
+  419  cd ..
+  420  clear
+  421  ls
+  422  mv stored_data/ data/
+  423  clear
+  424  ls
+  425  cd ..
+  426  cd 
+  427  cd
+  428  cd 
+  429  ls
+  430  clear
+  431  ls
+  432  clear
+  433  ls
+  434  clear
+  435  ls
+  436  clear
+  437  histor >commands.txt
+  438  history >commands.txt
+  439  cat commands.txt 
+  440  clear
+  441  wc commands.txt 
+  442  du -h
+  443  clear
+  444  df -h
+  445  la
+  446  ls
+  447  clear
+  448  which bash
+  449  which conda
+  450  which python
+  451  python
+  452  conda env list
+  453  clear
+  454  ls
+  455  clear
+  456  ls
+  457  clear
+  458  ls
+  459  clear
+  460  ls
+  461  clea
+  462  clear
+  463  ls
+  464  clear
+  465  ls
+  466  clear
+  467  ls
+  468  clear
+  469  ls
+  470  man ls
+  471  clear
+  472  ls
+  473  clear
+  474  cd parcels 
+  475  ls
+  476  cd data
+  477  ls
+  478  clear
+  479  cat test.txt
+  480  ls
+  481  clear
+  482  ls
+  483  find . -name "*.png"
+  484  clear
+  485  ls
+  486  cut test.txt 2
+  487  cut 3 test.txt 
+  488  man cut
+  489  cut -b 2 test.txt
+  490  cat test.txt
+  491  cut -b 5 test.txt
+  492  cut -b 1-2 test.txt
+  493  cut -b 1-6 test.txt
+  494  clear
+  495  ls
+  496  clear
+  497  man cut
+  498  clear
+  499  ls
+  500  clear
+  501  echo "hello world"
+  502  bsh.sh
+  503  touch bsh.sh
+  504  clear
+  505  vi bsh.sh
+  506  bash bsh.sh
+  507  bsh.sh
+  508  clear
+  509  cat bsh.sh
+  510  which bash
+  511  vi bsh.sh
+  512  bash bsh.sh
+  513  ls
+  514  clear
+  515  ls
+  516  vi bsh.sh
+  517  bash bsh.sh
+  518  clear
+  519  ls
+  520  vi bsh.sh
+  521  bash bsh.sh
+  522  clear
+  523  ls
+  524  clear
+  525  ls
+  526  clear
+  527  nano bsh.sh 
+  528  clear
+  529  ls
+  530  clear
+  531  bash bsh.sh
+  532  clear
+  533  vi bsh.sh
+  534  bash bsh.sh
+  535  vi bsh.sh
+  536  bash bsh.sh
+  537  vi bsh.sh
+  538  bash bsh.sh
+  539  clear
+  540  vi bsh.sh
+  541  bash bsh.sh
+  542  vi bsh.sh
+  543  bash bsh.sh
+  544  vi bsh.sh
+  545  bash bsh.sh
+  546  vi bsh.sh
+  547  bash bsh.sh
+  548  clear
+  549  ls
+  550  clear
+  551  ls
+  552  clear
+  553  vi bsh.sh
+  554  clear
+  555  bash bsh.sh
+  556  vi bsh.sh
+  557  bash bsh.sh
+  558  vi bsh.sh
+  559  nano bsh.sh
+  560  bash bsh.sh
+  561  clear
+  562  ls
+  563  clear
+  564  ls
+  565  clear
+  566  hdfs fs 
+  567  hdfs -fs .
+  568  hdfs -fs /.
+  569  clear
+  570  hdfs fs /.
+  571  clear
+  572  yum
+  573  clear
+  574  sudo apt-get update
+  575  sudo apt update
+  576  sudo
+  577  su
+  578  clear
+  579  ls
+  580  clear
+  581  ls
+  582  clear
+  583  ls
+  584  su
+  585  clear
+  586  ls
+  587  passwd
+  588  clear
+  589  ls
+  590  clear
+  591  ls
+  592  clear
+  593  sudo
+  594  sudo -e
+  595  clear
+  596  ls
+  597  clear
+  598  ls
+  599  vi bsh.sh
+  600  clear
+  601  ls
+  602  clear
+  603  cd
+  604  ls
+  605  clear
+  606  ls
+  607  cd data
+  608  ls
+  609  ./bsh.sh
+  610  ls -l -a
+  611  chmod 777 bsh.sh
+  612  clear
+  613  ls
+  614  ./bsh.sh
+  615  bsh.sh
+  616  bash bsh.sh
+  617  ./bsh.sh
+  618  clear
+  619  ls
+  620  chmod 555 bsh.sh
+  621  ls
+  622  clear
+  623  ./bsh.sh
+  624  clear
+  625  ls -l -a
+  626  clear
+  627  ls
+  628  ln -s ./test.txt ../soft_link
+  629  cd ..
+  630  ls
+  631  cat soft_link
+  632  ln -s ./test.txt ../soft_link.txt
+  633  ls
+  634  rm -r -f soft_link 
+  635  ls
+  636  clear
+  637  cd 
+  638  cd data
+  639  ls
+  640  ln -s test.txt ../softlink
+  641  cd ..
+  642  ls
+  643  ls -l -a
+  644  softlink
+  645  ./soflink
+  646  clear
+  647  cd
+  648  ls
+  649  clear
+  650  rmdir softlink 
+  651  rm -r softlink 
+  652  ls
+  653  clear
+  654  cd data
+  655  ls
+  656  ln -s /home/cloudera/data/test.txt ../soft-link
+  657  cd ..
+  658  ls
+  659  cat soft-link 
+  660  ls
+  661  clear
+  662  ls
+  663  cd data
+  664  ls
+  665  rm -r ../soft-link 
+  666  ls
+  667  cd ..
+  668  ls
+  669  clear
+  670  ls
+  671  cd data
+  672  ls
+  673  clear
+  674  vi test.txt
+  675  clear
+  676  ls
+  677  ln -s test.txt soft_link
+  678  cd ..
+  679  ls
+  680  cd data
+  681  ls
+  682  cat soft_link 
+  683  ls
+  684  clear
+  685  ls
+  686  rm -r -f soft_link 
+  687  ls
+  688  clear
+  689  ls
+  690  cat test6.txt 
+  691  ls
+  692  vi test6.txt 
+  693  clear
+  694  ln -s test6.txt ../soft_link
+  695  cd ..
+  696  ls
+  697  rm -r -f soft_link 
+  698  clear
+  699  ls
+  700  cd data
+  701  ls
+  702  ln -s test6.txt ../soft-link
+  703  clear
+  704  ls
+  705  pwd
+  706  clear
+  707  ls
+  708  cd ..
+  709  ls
+  710  rm -r -f soft-link 
+  711  lcear
+  712  clear
+  713  cd data
+  714  ls
+  715  ln -s test6.txt ../soft-link
+  716  cd ..
+  717  ls
+  718  cat soft-link 
+  719  ln -s /test6.txt ../soft-link
+  720  ls
+  721  rm -r -f soft-link 
+  722  cd data
+  723  ln -s /test6.txt ../soft-link
+  724  cd ..
+  725  ls
+  726  clear
+  727  ls
+  728  man ln
+  729  clear
+  730  pwd
+  731  rm -r -f soft-link 
+  732  ls
+  733  clear
+  734  cd data
+  735  ls
+  736  clear
+  737  ls
+  738  clear
+  739  ls
+  740  clear
+  741  ln -s /home/cloudera/data/test6.txt ../soft-link
+  742  cd ..
+  743  ls
+  744  clear
+  745  ls
+  746  cat soft-link
+  747  cd data
+  748  ls
+  749  cat test6.txt
+  750  echo "file edited after creating a soft link" | tee >test6.txt
+  751  cat test6.txt 
+  752  clear
+  753  cd ..
+  754  ls
+  755  cat soft-link 
+  756  clear
+  757  cd data
+  758  ls
+  759  rm -r -f test6.txt
+  760  ls
+  761  cd ..
+  762  ls
+  763  cat soft-link 
+  764  ls
+  765  rm -r -f soft-link 
+  766  ls
+  767  clear
+  768  ls
+  769  cd data
+  770  ls
+  771  clear
+  772  echo "this is the file to test hard link"  | tee test6.txt
+  773  cat test6.txt
+  774  ls
+  775  clear
+  776  ls
+  777  clear
+  778  ls
+  779  ln /home/cloudera/data/test6.txt ../hard-link
+  780  cd ..
+  781  l
+  782  ls
+  783  clear
+  784  ls
+  785  cat hard-link 
+  786  cd data
+  787  vi test6.txt 
+  788  cd ..
+  789  cd data
+  790  cat ../hard-link 
+  791  rm -r -f test6.txt 
+  792  cat ../hard-link 
+  793  clear
+  794  cd ..
+  795  ls
+  796  clear
+  797  cd data
+  798  ls
+  799  clear
+  800  ls
+  801  cat bsh.sh
+  802  ../bsh.sh
+  803  ./bsh.sh
+  804  clear
+  805  ls
+  806  clear
+  807  ls 
+  808  clear
+  809  ls
+  810  clear
+  811  ls
+  812  clear
+  813  ls
+  814  clear
+  815  man adduser
+  816  cat /etc/default/useradd 
+  817  ls -l /etc/default/useradd 
+  818  vi /etc/default/useradd 
+  819  clear
+  820  cd data
+  821  ls
+  822  clear
+  823  ls
+  824  cat test.txt
+  825  ls
+  826  head test.txt
+  827  tail test.txt
+  828  tail -f test.txt
+  829  clear
+  830  ls
+  831  clear
+  832  ls
+  833  clear
+  834  ls
+  835  clear
+  836  cat bsh.hs
+  837  cat bsh.sh
+  838  vi bsh.sh
+  839  clear
+  840  ls
+  841  clear
+  842  sudo 
+  843  sudo useradd zeeshan
+  844  cat /etc/passwd
+  845  sudo passwd zeeshan
+  846  clear
+  847  ls
+  848  exit
+  849  ls
+  850  pwd
+  851  ls
+  852  sudo zeeshan
+  853  su zeeshan
+  854  clear
+  855  su 
+  856  su
+  857  exit
+  858  ifconfig
+  859  ps
+  860  top
+  861  clea
+  862  clear
+  863  ps aux
+  864  clear
+  865  df -h 
+  866  clear
+  867  top
+  868  clear
+  869  free -h
+  870  csl
+  871  ls
+  872  clear
+  873  ls
+  874  rm -r -f commands.txt 
+  875  clear
+  876  history > linux-hadoop-commands.txt
+  877  clear
+  878  ls
+  879  pwd
+  880  cat linux-hadoop-commands.txt 
+  881  clear
+  882  ls
+  883  mv linux-hadoop-commands.txt ./data/
+  884  cd data
+  885  ls
+  886  ls -l -a
+  887  chmod 777 linux-hadoop-commands.txt 
+  888  clear
+  889  ls
+  890  ls -l -a
+  891  clear
+  892  ls
+  893  clea
+  894  rclear
+  895  clear
+  896  ls
+  897  ls -l -a
+  898  clear
+  899  ls
+  900  ls -l -a
+  901  chown cloudera:zeeshan ./linux-hadoop-commands.txt 
+  902  sudo chown cloudera:zeeshan ./linux-hadoop-commands.txt 
+  903  ls
+  904  ls -l -a
+  905  chmod g+rwx ./linux-hadoop-commands.txt 
+  906  clear
+  907  ls
+  908  ls -l -a
+  909  exit
+  910  su zeeshan
+  911  exit
+  912  ls
+  913  rm -r -f linux-hadoop-commands.txt 
+  914  clear
+  915  ls
+  916  history > linux-hadoop-commands.txt
