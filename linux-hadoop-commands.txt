@@ -919,7 +919,23 @@
   919  ln -s <full file path> softlink
   920  ln  <full file path> hardlink
   921  man <command name>
-  922  sudo useradd username
+  922  sudo useradd <username>
   923  sudo username passwd
-  924  sudo userdel username
+  924  sudo userdel <username>
+        uname
+        yum --> centos package manager
+        rpm --> redhat package manager
+        dnf --> other linux package manager
+        pacman --> other linux package manager
+        sudo groupadd <username>
+        cat /etc/group
+        sudo gpasswd -a <username> <groupname>
+        sudo gpasswd -m <username1> <username2>
+        which python
+        whomai
+        id
+        who 
+        date
+        
+
   
