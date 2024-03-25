@@ -936,6 +936,7 @@
         id
         who 
         date
+        awk '/.py/{print $1 $2}' filename.txt
         
 
   
