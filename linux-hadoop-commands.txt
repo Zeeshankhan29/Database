@@ -938,5 +938,11 @@
         date
         awk '/.py/{print $1 $2}' filename.txt
         
+        #push data from local to remote using scp command
+        scp -r <local folder/local file> remoteusername@<ipaddress>:<remote file path>
+        
+        #pull data from remote to local using scp command
+        scp remoteusername@<ipaddress>:<remote file path> <local file path>
+        
 
   
