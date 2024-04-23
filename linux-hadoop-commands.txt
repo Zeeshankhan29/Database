@@ -948,6 +948,10 @@ scp -r <local folder/local file> remoteusername@<ipaddress>:<remote file path>
 
 #pull data from remote to local using scp command
 scp remoteusername@<ipaddress>:<remote file path> <local file path>
+
+
+export PATH="/home/administrator/anaconda3/bin:$PATH"
+
     
 
 
