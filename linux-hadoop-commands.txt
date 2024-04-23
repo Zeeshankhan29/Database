@@ -922,27 +922,32 @@
   922  sudo useradd -m -s /bin/bash <username> (m to create directory and s to have bin bash access)
   923  sudo passwd <username>
   924  sudo userdel <username>
-        uname
-        yum --> centos package manager
-        rpm --> redhat package manager
-        dnf --> other linux package manager
-        pacman --> other linux package manager
-        sudo groupadd <username>
-        cat /etc/group
-        sudo gpasswd -a <username> <groupname>
-        sudo gpasswd -m <username1> <username2>
-        which python
-        whomai
-        id
-        who 
-        date
-        awk '/.py/{print $1 $2}' filename.txt
-        
-        #push data from local to remote using scp command
-        scp -r <local folder/local file> remoteusername@<ipaddress>:<remote file path>
-        
-        #pull data from remote to local using scp command
-        scp remoteusername@<ipaddress>:<remote file path> <local file path>
-        
 
-  
+sudo usermod -aG sudo zeeshan # sudo previligies to the user
+sudo ls
+
+
+uname
+yum --> centos package manager
+rpm --> redhat package manager
+dnf --> other linux package manager
+pacman --> other linux package manager
+sudo groupadd <username>
+cat /etc/group
+sudo gpasswd -a <username> <groupname>
+sudo gpasswd -m <username1> <username2>
+which python
+whomai
+id
+who 
+date
+awk '/.py/{print $1 $2}' filename.txt
+
+#push data from local to remote using scp command
+scp -r <local folder/local file> remoteusername@<ipaddress>:<remote file path>
+
+#pull data from remote to local using scp command
+scp remoteusername@<ipaddress>:<remote file path> <local file path>
+    
+
+
