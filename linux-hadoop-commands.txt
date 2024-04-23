@@ -919,8 +919,8 @@
   919  ln -s <full file path> softlink
   920  ln  <full file path> hardlink
   921  man <command name>
-  922  sudo useradd <username>
-  923  sudo username passwd
+  922  sudo useradd -m -s /bin/bash <username> (m to create directory and s to have bin bash access)
+  923  sudo passwd <username>
   924  sudo userdel <username>
         uname
         yum --> centos package manager
