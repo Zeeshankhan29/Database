@@ -1,0 +1,11 @@
+#Dvc push commands
+dvc init 
+dvc add data.txt
+dvc remote add <remote name> <ssh:path>
+dvc push remote -r <remote name>
+
+
+#Dvc pull commands
+dvc init
+dvc remote add <remote name> <ssh:path>
+dvc pull -r <remote name>
